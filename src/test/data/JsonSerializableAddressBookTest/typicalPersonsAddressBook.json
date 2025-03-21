@@ -10,6 +10,7 @@
     "dateOfJoining" : "15-Apr-2024",
     "nationality" : "Singaporean",
     "address" : "123, Jurong West Ave 6, #08-111",
+    "remark" : "",
     "tags" : [ "friends" ]
   }, {
     "name" : "Benson Meier",
@@ -21,6 +22,7 @@
     "dateOfJoining" : "15-Apr-2024",
     "nationality" : "Singaporean",
     "address" : "311, Clementi Ave 2, #02-25",
+    "remark" : "",
     "tags" : [ "owesMoney", "friends" ]
   }, {
     "name" : "Carl Kurz",
@@ -32,6 +34,7 @@
     "dateOfJoining" : "15-Apr-2024",
     "nationality" : "American",
     "address" : "wall street",
+    "remark" : "",
     "tags" : [ ]
   }, {
     "name" : "Daniel Meier",
@@ -43,6 +46,7 @@
     "dateOfJoining" : "15-Apr-2024",
     "nationality" : "American",
     "address" : "10th street",
+    "remark" : "",
     "tags" : [ "friends" ]
   }, {
     "name" : "Elle Meyer",
@@ -54,6 +58,7 @@
     "dateOfJoining" : "15-Apr-2024",
     "nationality" : "Indonesian",
     "address" : "michegan ave",
+    "remark" : "",
     "tags" : [ ]
   }, {
     "name" : "Fiona Kunz",
@@ -65,6 +70,7 @@
     "dateOfJoining" : "01-Jan-2024",
     "nationality" : "Singaporean",
     "address" : "little tokyo",
+    "remark" : "",
     "tags" : [ ]
   }, {
     "name" : "George Best",
@@ -76,6 +82,7 @@
     "dateOfJoining" : "01-Jan-2024",
     "nationality" : "American",
     "address" : "4th street",
+    "remark" : "",
     "tags" : [ ]
   } ]
 }

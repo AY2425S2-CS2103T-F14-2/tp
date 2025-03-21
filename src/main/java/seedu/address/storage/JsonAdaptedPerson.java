@@ -16,6 +16,7 @@ import seedu.address.model.person.Dob;
 import seedu.address.model.person.Email;
 import seedu.address.model.person.Gender;
 import seedu.address.model.person.Name;
+import seedu.address.model.person.Remark;
 import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Nric;
 import seedu.address.model.person.Person;
@@ -38,7 +39,9 @@ class JsonAdaptedPerson {
     private final String dateOfJoining;
     private final String nationality;
     private final String address;
+    private final String remark;
     private final List<JsonAdaptedTag> tags = new ArrayList<>();
+
 
     /**
      * Constructs a {@code JsonAdaptedPerson} with the given person details.
@@ -49,7 +52,9 @@ class JsonAdaptedPerson {
             @JsonProperty("gender") String gender,
             @JsonProperty("dob") String dob, @JsonProperty("dateOfJoining") String dateOfJoining,
             @JsonProperty("nationality") String nationality,
-            @JsonProperty("address") String address, @JsonProperty("tags") List<JsonAdaptedTag> tags) {
+            @JsonProperty("address") String address,
+                             @JsonProperty("address") String remark,
+                             @JsonProperty("tags") List<JsonAdaptedTag> tags) {
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -59,6 +64,7 @@ class JsonAdaptedPerson {
         this.dateOfJoining = dateOfJoining;
         this.nationality = nationality;
         this.address = address;
+        this.remark = remark;
         if (tags != null) {
             this.tags.addAll(tags);
         }
@@ -77,6 +83,7 @@ class JsonAdaptedPerson {
         dateOfJoining = source.getDateOfJoining().value;
         nationality = source.getNationality().value;
         address = source.getAddress().value;
+        remark = source.getRemark().value;
         tags.addAll(source.getTags().stream()
                 .map(JsonAdaptedTag::new)
                 .collect(Collectors.toList()));
@@ -168,9 +175,17 @@ class JsonAdaptedPerson {
         }
         final Address modelAddress = new Address(address);
 
+        if (remark == null) {
+            throw new IllegalValueException(String.format(MISSING_FIELD_MESSAGE_FORMAT, Remark.class.getSimpleName()));
+        }
+        final Remark modelRemark = new Remark(remark);
+
         final Set<Tag> modelTags = new HashSet<>(personTags);
+
+
         return new Person(modelName, modelPhone, modelEmail, modelNric, modelGender, modelDob, modelDateOfJoining,
-                modelNationality, modelAddress, modelTags);
+                modelNationality, modelAddress, modelTags, modelRemark);
+
     }
 
 }

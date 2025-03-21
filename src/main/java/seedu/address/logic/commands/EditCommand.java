@@ -27,6 +27,7 @@ import seedu.address.logic.Messages;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Remark;
 import seedu.address.model.person.DateOfJoining;
 import seedu.address.model.person.Dob;
 import seedu.address.model.person.Email;
@@ -121,8 +122,9 @@ public class EditCommand extends Command {
         Address updatedAddress = editPersonDescriptor.getAddress().orElse(personToEdit.getAddress());
         Set<Tag> updatedTags = editPersonDescriptor.getTags().orElse(personToEdit.getTags());
 
+        Remark updatedRemark = personToEdit.getRemark(); // edit command does not allow editing remarks
         return new Person(updatedName, updatedPhone, updatedEmail, updatedNric, updatedGender, updatedDob, updatedDate,
-                updatedNationality, updatedAddress, updatedTags);
+                updatedNationality, updatedAddress, updatedTags, updatedRemark);
     }
 
     @Override

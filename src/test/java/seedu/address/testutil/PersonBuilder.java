@@ -13,6 +13,7 @@ import seedu.address.model.person.Nationality;
 import seedu.address.model.person.Nric;
 import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
+import seedu.address.model.person.Remark;
 import seedu.address.model.tag.Tag;
 import seedu.address.model.util.SampleDataUtil;
 
@@ -30,6 +31,7 @@ public class PersonBuilder {
     public static final String DEFAULT_DATE = "17-Mar-2025";
     public static final String DEFAULT_NATIONALITY = "Singaporean";
     public static final String DEFAULT_ADDRESS = "123, Jurong West Ave 6, #08-111";
+    public static final String DEFAULT_REMARK = "She likes aardvarks.";
 
     private Name name;
     private Phone phone;
@@ -41,6 +43,7 @@ public class PersonBuilder {
     private Nationality nationality;
     private Address address;
     private Set<Tag> tags;
+    private Remark remark;
 
     /**
      * Creates a {@code PersonBuilder} with the default details.
@@ -55,6 +58,7 @@ public class PersonBuilder {
         dateOfJoining = new DateOfJoining(DEFAULT_DATE);
         nationality = new Nationality(DEFAULT_NATIONALITY);
         address = new Address(DEFAULT_ADDRESS);
+        remark = new Remark(DEFAULT_REMARK);
         tags = new HashSet<>();
     }
 
@@ -71,6 +75,7 @@ public class PersonBuilder {
         dateOfJoining = personToCopy.getDateOfJoining();
         nationality = personToCopy.getNationality();
         address = personToCopy.getAddress();
+        remark = personToCopy.getRemark();
         tags = new HashSet<>(personToCopy.getTags());
     }
 
@@ -154,7 +159,16 @@ public class PersonBuilder {
         return this;
     }
 
+    /**
+     * Sets the {@code Remark} of the {@code Person} that we are building.
+     */
+    public PersonBuilder withRemark(String remark) {
+        this.remark = new Remark(remark);
+        return this;
+    }
+
+
     public Person build() {
-        return new Person(name, phone, email, nric, gender, dob, dateOfJoining, nationality, address, tags);
+        return new Person(name, phone, email, nric, gender, dob, dateOfJoining, nationality, address, tags, remark);
     }
 }

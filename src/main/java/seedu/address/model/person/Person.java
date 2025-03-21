@@ -22,20 +22,22 @@ public class Person {
     private final Email email;
     private final Nric nric;
 
+
     // Data fields
     private final Gender gender;
     private final Dob dob;
     private final DateOfJoining dateOfJoining;
     private final Nationality nationality;
     private final Address address;
+    private final Remark remark;
     private final Set<Tag> tags = new HashSet<>();
 
     /**
      * Every field must be present and not null.
      */
     public Person(Name name, Phone phone, Email email, Nric nric, Gender gender, Dob dob, DateOfJoining dateOfJoining,
-                  Nationality nationality, Address address, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, gender, dob, dateOfJoining, nationality, address, tags);
+                  Nationality nationality, Address address, Set<Tag> tags, Remark remark) {
+        requireAllNonNull(name, phone, email, gender, dob, dateOfJoining, nationality, address, tags, remark);
         this.name = name;
         this.phone = phone;
         this.email = email;
@@ -46,7 +48,23 @@ public class Person {
         this.nationality = nationality;
         this.address = address;
         this.tags.addAll(tags);
+        this.remark = remark;
     }
+
+    public Person(Name name, Phone phone, Email email, Address address, Remark remark, Set<Tag> tags){
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.nric = null;
+        this.gender = null;
+        this.dob = null;
+        this.dateOfJoining = null;
+        this.nationality = null;
+        this.address = address;
+        this.tags.addAll(tags);
+        this.remark = remark;
+    }
+
 
     public Name getName() {
         return name;
@@ -83,6 +101,8 @@ public class Person {
     public Address getAddress() {
         return address;
     }
+
+    public Remark getRemark() {return remark; }
 
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException}

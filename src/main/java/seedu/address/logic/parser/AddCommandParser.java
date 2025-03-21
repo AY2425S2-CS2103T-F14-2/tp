@@ -18,6 +18,7 @@ import java.util.stream.Stream;
 import seedu.address.logic.commands.AddCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
 import seedu.address.model.person.Address;
+import seedu.address.model.person.Remark;
 import seedu.address.model.person.DateOfJoining;
 import seedu.address.model.person.Dob;
 import seedu.address.model.person.Email;
@@ -61,10 +62,11 @@ public class AddCommandParser implements Parser<AddCommand> {
         DateOfJoining dateOfJoining = ParserUtil.parseDate(argMultimap.getValue(PREFIX_DATE).get());
         Nationality nationality = ParserUtil.parseNationality(argMultimap.getValue(PREFIX_NATIONALITY).get());
         Address address = ParserUtil.parseAddress(argMultimap.getValue(PREFIX_ADDRESS).get());
+        Remark remark = new Remark(""); // add command does not allow adding remarks straight away
         Set<Tag> tagList = ParserUtil.parseTags(argMultimap.getAllValues(PREFIX_TAG));
 
         Person person = new Person(name, phone, email, nric, gender, dob, dateOfJoining,
-                nationality, address, tagList);
+                nationality, address, tagList, remark);
 
         return new AddCommand(person);
     }
