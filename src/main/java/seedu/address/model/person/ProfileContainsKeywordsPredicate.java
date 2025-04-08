@@ -1,6 +1,5 @@
 package seedu.address.model.person;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
@@ -26,14 +25,14 @@ public class ProfileContainsKeywordsPredicate implements Predicate<Person> {
 
     @Override
     public boolean test(Person person) {
-        // Convert full name to lowercase
-        String fullNameLower = person.getName().fullName.toLowerCase().trim();
-        String[] personWords = fullNameLower.split("\\s+");
+        String fullName = person.getName().fullName.trim().toLowerCase();
 
-        // Check if ALL keywords match as full words
-        return keywords.stream().allMatch(keyword ->
-            Arrays.stream(personWords).anyMatch(word -> word.equals(keyword))
-        );
+        for (String keyword : keywords) {
+            if (fullName.equals(keyword)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

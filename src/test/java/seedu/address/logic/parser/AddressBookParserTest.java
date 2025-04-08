@@ -57,7 +57,7 @@ public class AddressBookParserTest {
 
     @Test
     public void parseCommand_view() throws Exception {
-        List<String> inputNames = Arrays.asList("David", "Li", "Alex", "Tan", "Alex", "Yeoh");
+        List<String> inputNames = Arrays.asList("David Li");
         String input = ViewCommand.COMMAND_WORD + " " + String.join(" ", inputNames);
         ViewCommand expectedCommand = new ViewCommand(new ProfileContainsKeywordsPredicate(inputNames));
 

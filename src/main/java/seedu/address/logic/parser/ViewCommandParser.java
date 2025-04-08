@@ -2,7 +2,7 @@ package seedu.address.logic.parser;
 
 import static seedu.address.logic.Messages.MESSAGE_INVALID_COMMAND_FORMAT;
 
-import java.util.Arrays;
+import java.util.List;
 
 import seedu.address.logic.commands.ViewCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -29,9 +29,10 @@ public class ViewCommandParser implements Parser<ViewCommand> {
             throw new ParseException("Names should only contain alphabetical characters and spaces.");
         }
 
-        String[] profileKeywords = trimmedArgs.toLowerCase().split("\\s+");
+        // Pass the full name as a single keyword
+        List<String> profileKeywords = List.of(trimmedArgs.toLowerCase());
 
-        return new ViewCommand(new ProfileContainsKeywordsPredicate(Arrays.asList(profileKeywords)));
+        return new ViewCommand(new ProfileContainsKeywordsPredicate(profileKeywords));
     }
 }
 
