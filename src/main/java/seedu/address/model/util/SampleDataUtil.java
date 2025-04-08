@@ -35,7 +35,7 @@ public class SampleDataUtil {
                 new Gender("Female"), new Dob("12-May-2001"), new DateOfJoining("12-Feb-2025"),
                 new Nationality("Singaporean"), new Address("Blk 30 Lorong 3 Serangoon Gardens, #07-18/192393"),
                 EMPTY_NOTE, getTag("Marketing", "Part-Time", "Marketing Specialist")),
-            new Person(new Name("Charlotte Oliveiro"), new Phone("93210283"), new Email("charlotte@example.com"),
+            new Person(new Name("Charlotte Olivia"), new Phone("93210283"), new Email("charlotte@example.com"),
                 new Nric("T1919183H"),
                 new Gender("Female"), new Dob("10-Dec-2019"), new DateOfJoining("12-Feb-2025"),
                 new Nationality("American"), new Address("Blk 11 Ang Mo Kio Street 74, #11-04/023456"), EMPTY_NOTE,
