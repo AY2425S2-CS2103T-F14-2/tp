@@ -54,7 +54,7 @@ The current version of the HRelper is a prototype designed to showcase its core 
 
 1. Copy the file to the folder you want to use as the _home folder_ for HRelper.
 
-1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar HRelper.jar` command to run the application.<br>
+1. Open a command terminal, `cd` into the folder you put the jar file in, and use the `java -jar "[CS2103T-F14-2][HRelper]".jar` command to run the application.<br>
    A GUI similar to the below should appear in a few seconds. 
 ![IntroPic](images/IntroPic.png) <br>
 <br>
@@ -71,7 +71,7 @@ The current version of the HRelper is a prototype designed to showcase its core 
 
    * `clear` : Deletes all contacts.
 
-   * `view Lee` : Views the contact by their surname.
+   * `view Lee` : Views the contact by their name.
 
    * `edit 2 n/Betsy Crower`: Edits the name of the 2nd person to be `Betsy Crower`.
 
