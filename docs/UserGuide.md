@@ -152,22 +152,19 @@ Format: `list`
 
 ### Viewing a profile: `view`
 
-Displays the full profile of an employee by matching their **full name** or **partial name**.
+Displays the full profile of an employee by matching their **full name**.
 
-Format: `view FULLNAME` or `view PARTIALNAME`
+Format: `view FULLNAME`
 
-* A partial name: one FULL word of a full name<br> e.g `David` of `David Li Wen Jun`
 * The search is **case-insensitive**.<br> e.g `hans` will match `Hans`
 * ⚠️ Order matters for full names.<br> e.g. `Hans Bo` will not match `Bo Hans`
 * Only the name is searched.
 * **Exact word match only** - prefix names won't be matched.<br> e.g. `Han` will not match `Hans`
-* Persons matching the partial name or full name will be returned (i.e. `OR` search).<br>
-  e.g. `view Bo` will return name with same partial name  `Hans Bo`, `Ling Bo` <br> e.g. `view Hans Bo` will return `Hans Bo`
+* Person matching the full name will be returned.<br>
+e.g. `view Hans Bo` will return `Hans Bo`
 
 Examples:
 * `view David Li`
-* `view David`
-* `view Li`
 
 ![view_profile](images/ViewImage.png)
 
