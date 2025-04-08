@@ -76,7 +76,7 @@ public class ViewCommandTest {
     @Test
     public void execute_viewFullName_success() {
         // Prepare predicate and command
-        ProfileContainsKeywordsPredicate predicate = new ProfileContainsKeywordsPredicate(List.of("David", "Li"));
+        ProfileContainsKeywordsPredicate predicate = new ProfileContainsKeywordsPredicate(List.of("David Li"));
         ViewCommand viewCommand = new ViewCommand(predicate);
 
         // Update model expected state
@@ -89,7 +89,7 @@ public class ViewCommandTest {
 
     @Test
     public void execute_viewSurname_success() {
-        ProfileContainsKeywordsPredicate predicate = new ProfileContainsKeywordsPredicate(List.of("Li"));
+        ProfileContainsKeywordsPredicate predicate = new ProfileContainsKeywordsPredicate(List.of("David Li"));
         ViewCommand viewCommand = new ViewCommand(predicate);
         model.updateFilteredPersonList(predicate);
 
